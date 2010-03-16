@@ -6,9 +6,9 @@ function wait_job() {
 }
 
 function wait_pname() {
-  proc_pid=$(pgrep "$*")
+  proc_pid=$(pgrep "$1")
   for pid in $proc_pid; do
-	python after.py '$pid'
+	python after.py "$pid"
   done
-  python after.py $pid '$2'
+  python after.py $pid "$2"
 }
